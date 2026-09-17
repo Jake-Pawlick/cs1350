@@ -13,7 +13,6 @@ print(total)
 for product, quantity in inventory.items():
     print(f"{product}: {quantity}")
 
-
 # Intermediate
 prices = {"laptop": 999, "phone": 699, "tablet": 449, "watch": 299}
 
@@ -32,7 +31,6 @@ for product, price in prices.items():
         most_expensive = product
 
 print(most_expensive, highest_price)
-
 
 # Advanced
 temps = {"Mon": 72, "Tue": 68, "Wed": 75, "Thu": 80, "Fri": 65}
@@ -64,7 +62,6 @@ for temp in temps.values():
 
 print(above_average)
 
-
 # Unit 3.2
 # Beginner
 products = {
@@ -76,7 +73,6 @@ print(products["laptop"]["price"])
 
 for product, info in products.items():
     print(product, info["stock"])
-
 
 # Intermediate
 countries = ["USA", "Canada", "Mexico"]
@@ -96,7 +92,6 @@ for product, info in list(products.items()):
         del products[product]
 
 print(products)
-
 
 # Advanced
 company = {
@@ -123,7 +118,6 @@ for department, employees in company.items():
 
 print(highest_employee, highest_salary)
 
-
 # Unit 3.3
 # Beginner
 cubes = {x: x ** 3 for x in range(1, 6)}
@@ -137,7 +131,6 @@ celsius = {
 }
 
 print(celsius)
-
 
 # Intermediate
 scores = {"Alice": 88, "Bob": 65, "Carol": 92, "Dave": 71, "Eve": 58}
@@ -175,7 +168,6 @@ id_lookup = {
 
 print(id_lookup)
 
-
 # Advanced
 sales = [
     ("North", "Alice", 5000),
@@ -208,7 +200,9 @@ for region, person, amount in sales:
 
 print(nested_sales)
 
+
 #   Week 2 Lecture 2
+
 
 # Unit 1
 # Beginner
@@ -218,8 +212,7 @@ numbers = set([1, 2, 2, 3, 3, 3, 4, 4, 4, 4])
 print(len(numbers))
 
 empty = {}
-print(type(empty))
-
+print(type(empty))  # This creates an empty dictionary, not a set.
 
 # Intermediate
 text = "mississippi"
@@ -231,9 +224,8 @@ emails = ["a@b.com", "c@d.com", "a@b.com", "e@f.com", "c@d.com"]
 unique_emails = list(set(emails))
 print(unique_emails)
 
-s = {[1, 2], [3, 4]}
+# s = {[1, 2], [3, 4]}
 # This fails because lists are not hashable and cannot be set elements.
-
 
 # Advanced
 import time
@@ -264,7 +256,6 @@ for edge in edges:
 
 print(nodes)
 
-
 # Unit 2
 # Beginner
 a = {1, 2, 3, 4}
@@ -285,7 +276,6 @@ print(morning_shift | evening_shift | weekend_shift)
 print(morning_shift - evening_shift - weekend_shift)
 print((morning_shift ^ evening_shift) - weekend_shift)
 
-
 # Advanced
 prereqs_met = {"Alice", "Bob", "Carol", "Dave"}
 has_space = {"Bob", "Carol", "Eve", "Frank"}
@@ -303,7 +293,6 @@ missing_criteria = (
 )
 print(missing_criteria)
 
-
 # Unit 3
 # Beginner
 numbers = {1, 2, 3}
@@ -315,9 +304,9 @@ even_numbers = {x for x in range(21) if x % 2 == 0}
 print(even_numbers)
 
 numbers.discard(10)
-numbers.remove(2)
 numbers.discard(100)
 
+# remove() would raise a KeyError if the element does not exist.
 
 # Intermediate
 numbers = [4, 5, 2, 4, 8, 5, 2, 1, 9, 4]
@@ -347,7 +336,6 @@ actual = {1, 2, 4, 5, 7, 8, 10}
 missing = expected - actual
 print(missing)
 
-
 # Advanced
 def find_duplicates(lst):
     seen = set()
@@ -360,7 +348,6 @@ def find_duplicates(lst):
             seen.add(item)
 
     return duplicates
-
 
 print(find_duplicates([1, 2, 2, 3, 3, 3, 4]))
 
@@ -376,9 +363,7 @@ print(all_three)
 print(alice_only)
 print(all_skills)
 
-
 def common_chars(string1, string2):
     return set(string1) & set(string2)
-
 
 print(common_chars("hello", "world"))
